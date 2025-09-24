@@ -141,3 +141,7 @@ Got it 👍 Since you used **W3Schools** for coding references and **ChatGPT** f
 * OpenAI. (2025). *ChatGPT (Version GPT-5) \[Large language model]*. OpenAI. Retrieved September 16, 2025, from [https://chat.openai.com/](https://chat.openai.com/)
 
 
+![alt Home pageext](../assests/image.png)
+![alt Map](../assests/map.png)
+![alt text](../assests/tablet.png)
+![alt text](../assests/product.png)
