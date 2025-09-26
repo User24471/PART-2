@@ -431,16 +431,14 @@ img {
 }
 
 
-/* ===========================
-   Responsive Images
-   =========================== */
+/*   Responsive Images */
 .responsive-img {
     max-width: 100%;
     height: auto;
-    border-radius: 10px; /* optional: gives rounded corners */
+    border-radius: 10px; 
     display: block;
-    margin: 15px auto; /* centers images */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* optional: soft shadow */
+    margin: 15px auto; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); 
 }
 
 
