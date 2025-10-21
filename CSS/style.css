@@ -582,6 +582,29 @@ tr:hover {
   }
 }
 
+/* Uniform Product Image Styling*/
+
+.product-gallery img {
+  width: 100%;
+  height: 250px; /* fixed height for equal sizing */
+  object-fit: cover; /* crops without stretching */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Maintain good layout on small screens */
+@media (max-width: 768px) {
+  .product-gallery img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-gallery img {
+    height: 180px;
+  }
+}
 
 
 
