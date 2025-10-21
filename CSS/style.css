@@ -606,5 +606,82 @@ tr:hover {
   }
 }
 
+/* ===============================
+   Services Page Styling
+   =============================== */
+main {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+main h1 {
+  font-size: 2rem;
+  color: #00695c;
+  margin-bottom: 20px;
+}
+
+.service {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; /* Stack vertically by default (for mobile) */
+  background: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 900px;
+  transition: transform 0.3s ease;
+}
+
+.service:hover {
+  transform: translateY(-5px);
+}
+
+.service-image {
+  width: 100%;
+  max-width: 350px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.service h2 {
+  color: #2e7d32;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.service p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+/* ===============================
+   For larger screens — show image & text side-by-side
+   =============================== */
+@media (min-width: 768px) {
+  .service {
+    flex-direction: row; /* Make image and text inline */
+    text-align: left;
+  }
+
+  .service-image {
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+
+  .service:nth-child(even) {
+    flex-direction: row-reverse; /* Alternate layout for variety */
+  }
+
+  .service h2, .service p {
+    flex: 1;
+  }
+}
+
 
 
