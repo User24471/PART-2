@@ -384,3 +384,58 @@ footer {
   }
 }
 
+/* Default navigation style */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0f8f5;
+  padding: 10px 20px;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  nav {
+    display: none; /* hide menu by default on mobile */
+    flex-direction: column;
+    background-color: #f0f8f5;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    text-align: left;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  nav.active {
+    display: flex; /* show menu when toggled */
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-toggle.open i {
+    content: "\f00d"; /* switch icon to X when open */
+  }
+}
+
