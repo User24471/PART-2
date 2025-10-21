@@ -1,43 +1,73 @@
-/* Import a clean Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-/* General styles */
-body {
-  background-color: #eafaf1;
-  font-family: 'Poppins', sans-serif;
+/* ============================================
+   Global Typography & General Styling
+   ============================================ */
+:root {
+  --primary-color: #1abc9c;
+  --secondary-color: #2e7d32;
+  --text-color: #333;
+  --light-bg: #f9f9f9;
+  --font-family: 'Poppins', sans-serif;
+}
+
+* {
   margin: 0;
   padding: 0;
-  color: #2d3436;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eafaf1;
+  font-family: var(--font-family);
+  color: var(--text-color);
   line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
-/* Header */
+/* Headings Hierarchy */
+h1, h2, h3 {
+  font-weight: 700;
+  color: var(--secondary-color);
+}
+
+p, label {
+  font-size: 1rem;
+}
+
+/* ============================================
+   HEADER + NAVIGATION LAYOUT
+   ============================================ */
 header {
-  background: #1abc9c;
-  padding: 15px 20px;
+  background: var(--primary-color);
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 15px 30px;
 }
 
-.logo {
-  height: 120px;
-  margin-bottom: 10px;
+header img.logo {
+  height: 100px;
+  width: auto;
+  border-radius: 10px;
 }
 
-/* Navigation */
+/* Navigation Styling */
 nav {
   display: flex;
   flex-wrap: wrap;
+  gap: 15px;
   justify-content: center;
-  gap: 20px;
 }
 
 nav a {
+  color: white;
   text-decoration: none;
   font-weight: 600;
-  font-size: 18px;
-  color: white;
+  font-size: 1rem;
   padding: 8px 15px;
   border-radius: 5px;
   transition: background 0.3s ease, transform 0.2s ease;
@@ -48,589 +78,98 @@ nav a:hover {
   transform: scale(1.05);
 }
 
-/* Main content */
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
 main {
-  padding: 30px 20px;
   text-align: center;
+  padding: 40px 20px;
 }
 
-h1 {
-  color: #00695c;
+main h1 {
+  font-size: 2.2rem;
   margin-bottom: 15px;
 }
 
 .main-image {
-  width: 80%;
+  width: 90%;
   max-width: 700px;
-  height: auto;
-  border-radius: 12px;
-  margin: 20px 0;
-  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  margin: 20px auto;
+  display: block;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
-/* Footer */
-footer {
-  background: #1abc9c;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  margin-top: 30px;
-  font-size: 14px;
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-  nav a {
-    font-size: 16px;
-    padding: 6px 12px;
-  }
-
-  .logo {
-    height: 100px;
-  }
-}
-
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .main-image {
-    width: 95%;
-  }
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 22px;
-  }
-
-  nav a {
-    font-size: 15px;
-  }
-}
-
-/* Products grid */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.product-card {
-  background: #fff;
-  border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  text-align: center;
-  transition: transform 0.2s ease;
-}
-
-.product-card:hover {
-  transform: translateY(-5px);
-}
-
-.product-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 1rem;
-}
-
-.product-card h2 {
-  font-size: 1.2rem;
-  margin: 0.5rem 0;
-  color: #2e7d32;
-}
-
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Body Styling */
-body {
-  font-family: "Poppins", Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #f5fff5;
-  color: #333;
-  padding: 0;
-  margin: 0;
-}
-
-/* Header */
-header {
-  background: #38b93e;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-}
-
-header .logo {
-  max-width: 200px;
-  height: auto;
-}
-
-/* Navigation */
-nav {
-  margin-top: 1rem;
-}
-
-nav a {
-  text-decoration: none;
-  color: white;
-  margin: 0 15px;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-nav a:hover,
-nav a.active {
-  color: #ffeb3b;
-}
-
-/* Main Content */
-main {
-  padding: 2rem;
-  text-align: center;
-}
-
-main img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin: 1rem 0;
-}
-
-/* Footer */
-footer {
-  background: #2e7d32;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
-}
-
-/* Product Grid */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.product-card {
-  background: #fff;
-  border-radius: 8px;
-  padding: 1rem;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  text-align: center;
-  transition: transform 0.2s ease;
-}
-
-.product-card:hover {
-  transform: translateY(-5px);
-}
-
-.product-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 1rem;
-}
-
-/* Responsive Design */
-/* Phones */
-@media (max-width: 600px) {
-  nav a {
-    display: block;
-    margin: 10px 0;
-  }
-
-  header .logo {
-    max-width: 150px;
-  }
-
-  main {
-    padding: 1rem;
-  }
-}
-
-/* Tablets */
-@media (min-width: 601px) and (max-width: 1024px) {
-  nav a {
-    margin: 0 10px;
-    font-size: 1rem;
-  }
-
-  main {
-    padding: 1.5rem;
-  }
-}
-
-/* Large Screens (PC) */
-@media (min-width: 1025px) {
-  nav a {
-    margin: 0 20px;
-    font-size: 1.1rem;
-  }
-
-  main {
-    max-width: 1200px;
-    margin: auto;
-  }
-}
-/* Social Footer */
-.social-footer {
-  margin-top: 1rem;
-}
-
-.social-footer a {
-  color: white;
-  margin: 0 10px;
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
-}
-
-.social-footer a:hover {
-  color: #ffeb3b; /* highlight on hover */
-}
-
-/* Logo Styling */
-.logo {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Main Image Styling */
-.main-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin: 1rem 0;
-}
-
-/* General Image Rule (applies to all images if no class) */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Small screens (phones) */
-@media (max-width: 600px) {
-  .logo {
-    max-width: 180px; /* smaller logo for phones */
-  }
-
-  .main-image {
-    margin: 0.5rem 0;
-  }
-}
-
-/* Tablets */
-@media (min-width: 601px) and (max-width: 1024px) {
-  .logo {
-    max-width: 250px;
-  }
-}
-
-/* Make all service images responsive */
-.service-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin: 1rem 0;
-}
-
-/* Service section layout */
-.service {
-  margin: 2rem 0;
-  text-align: center;
-  padding: 1rem;
-}
-
-/* For larger screens (tablet + PC), display services side by side */
-@media (min-width: 768px) {
-  .service {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    text-align: left;
-  }
-
-  .service img {
-    max-width: 300px;
-    flex-shrink: 0;
-  }
-
-  .service p {
-    flex: 1;
-  }
-}
-
-/* ===============================
-   Products Page Styling
-   =============================== */
-
-
-.product-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin: 30px 0;
-}
-
-.product-gallery div {
-    text-align: center;
-}
-
-.product-gallery img {
-    width: 100%;
-    max-width: 350px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-.product-gallery img:hover {
-    transform: scale(1.05);
-}
-
-.product-gallery h3 {
-    margin: 10px 0;
-    color: #333;
-}
-
-/* ===========================
-   Responsive Google Map
-   =========================== */
-.map-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    height: 0;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-    margin-top: 20px;
-}
-
-.map-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-
-
-/*   Responsive Images */
-.responsive-img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px; 
-    display: block;
-    margin: 15px auto; 
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15); 
-}
-
-
-/* ===========================
-   Responsive Table
-   =========================== */
+/* ============================================
+   RESPONSIVE TABLE (PRODUCTS PAGE)
+   ============================================ */
 .table-container {
-    width: 100%;
-    overflow-x: auto; /* allows horizontal scroll on small screens */
-    margin: 20px 0;
-    -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+  width: 100%;
+  overflow-x: auto; /* allows horizontal scroll on small screens */
+  margin: 20px 0;
+  -webkit-overflow-scrolling: touch;
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 500px; /* prevents columns from squashing too much */
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 550px; /* prevents table from squashing */
+  background: #fff;
 }
 
 th, td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: center;
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  text-align: center;
+  font-size: 1rem;
 }
 
 th {
-    background-color: #2e7d32;
-    color: white;
-    font-weight: bold;
+  background-color: var(--secondary-color);
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 tr:nth-child(even) {
-    background-color: #f9f9f9;
+  background-color: #f3f3f3;
 }
 
 tr:hover {
-    background-color: #e0f2f1;
+  background-color: #e0f2f1;
+  transition: background 0.2s ease;
 }
 
-
-/* ===========================================
-   CONTACT FORM STYLING
-   =========================================== */
-
-.contact-form {
-  max-width: 600px;
-  margin: 50px auto;
-  padding: 30px;
-  background: #f5f5f5;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  animation: fadeIn 1s ease;
-}
-
-.contact-form h2 {
-  text-align: center;
-  color: #004d40;
-  margin-bottom: 25px;
-  font-size: 1.8rem;
-  letter-spacing: 1px;
-}
-
-.contact-form label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 600;
-  color: #333;
-}
-
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 12px 15px;
-  margin-bottom: 20px;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-}
-
-/* Focus animation */
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: #00bfa6;
-  box-shadow: 0 0 5px rgba(0,191,166,0.5);
-  outline: none;
-  transform: scale(1.02);
-}
-
-/* Submit Button */
-.contact-form button {
-  display: block;
-  width: 100%;
-  background: #004d40;
-  color: #fff;
-  padding: 14px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.contact-form button:hover {
-  background: #00796b;
-  transform: translateY(-2px);
-}
-
-.contact-form button:active {
-  background: #004d40;
-  transform: translateY(0);
-}
-
-/* Fade In Animation */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .contact-form {
-    margin: 20px;
-    padding: 20px;
+/* Mobile table fix */
+@media (max-width: 600px) {
+  .table-container {
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
   }
 
-  .contact-form h2 {
-    font-size: 1.5rem;
+  table {
+    font-size: 0.9rem;
+    min-width: 450px;
+  }
+
+  th, td {
+    padding: 10px;
   }
 }
 
-@media (max-width: 480px) {
-  .contact-form {
-    padding: 15px;
-  }
-
-  .contact-form input,
-  .contact-form textarea {
-    font-size: 0.95rem;
-  }
-}
-
-/* Uniform Product Image Styling*/
-
-.product-gallery img {
-  width: 100%;
-  height: 250px; /* fixed height for equal sizing */
-  object-fit: cover; /* crops without stretching */
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-/* Maintain good layout on small screens */
-@media (max-width: 768px) {
-  .product-gallery img {
-    height: 200px;
-  }
-}
-
-@media (max-width: 480px) {
-  .product-gallery img {
-    height: 180px;
-  }
-}
-
-/* ===============================
-   Services Page Styling
-   =============================== */
-main {
-  padding: 40px 20px;
-  text-align: center;
-}
-
-main h1 {
-  font-size: 2rem;
-  color: #00695c;
-  margin-bottom: 20px;
-}
-
+/* ============================================
+   SERVICES PAGE (Vertical + Inline Layout)
+   ============================================ */
 .service {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  flex-direction: column; /* Stack vertically by default (for mobile) */
-  background: #f9f9f9;
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  margin: 20px auto;
+  background: var(--light-bg);
+  margin: 25px auto;
   padding: 20px;
-  max-width: 900px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  max-width: 950px;
   transition: transform 0.3s ease;
 }
 
@@ -648,40 +187,147 @@ main h1 {
 }
 
 .service h2 {
-  color: #2e7d32;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   margin-bottom: 10px;
 }
 
 .service p {
   font-size: 1rem;
-  color: #555;
-  line-height: 1.6;
   max-width: 600px;
+  color: #555;
 }
 
-/* ===============================
-   For larger screens — show image & text side-by-side
-   =============================== */
+/* Side-by-side layout for larger screens */
 @media (min-width: 768px) {
   .service {
-    flex-direction: row; /* Make image and text inline */
+    flex-direction: row;
     text-align: left;
-  }
-
-  .service-image {
-    margin-right: 20px;
-    margin-bottom: 0;
+    gap: 20px;
   }
 
   .service:nth-child(even) {
-    flex-direction: row-reverse; /* Alternate layout for variety */
+    flex-direction: row-reverse;
   }
 
-  .service h2, .service p {
-    flex: 1;
+  .service-image {
+    margin-bottom: 0;
   }
 }
 
+/* ============================================
+   CONTACT FORM STYLING
+   ============================================ */
+.contact-form {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #f5f5f5;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  animation: fadeIn 1s ease;
+}
 
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
 
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #00bfa6;
+  box-shadow: 0 0 6px rgba(0,191,166,0.4);
+  outline: none;
+}
+
+/* Button */
+.contact-form button {
+  width: 100%;
+  background: var(--secondary-color);
+  color: #fff;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #00796b;
+  transform: translateY(-3px);
+}
+
+/* ============================================
+   FOOTER + SOCIAL ICONS
+   ============================================ */
+footer {
+  background: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 0.95rem;
+}
+
+.social-footer {
+  margin-top: 10px;
+}
+
+.social-footer a {
+  color: white;
+  margin: 0 10px;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-footer a:hover {
+  color: #ffeb3b;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ============================================ */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  main h1 {
+    font-size: 1.8rem;
+  }
+
+  .main-image {
+    width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  header img.logo {
+    height: 80px;
+  }
+
+  nav a {
+    font-size: 0.9rem;
+  }
+
+  .service h2 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
