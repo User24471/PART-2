@@ -263,6 +263,39 @@ tr:hover {
   transform: translateY(-3px);
 }
 
+.glow-button {
+  background-color: #4ee029;           /* Base red */
+  color: white;
+  border: 2px solid #15ff00;           /* Red edge */
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 255, 64, 0.5);
+  animation: pulseGlow 1.8s infinite ease-in-out;
+}
+
+/* On hover - stronger red */
+.glow-button:hover {
+  background-color: #8aff66;
+  box-shadow: 0 0 25px rgba(0, 255, 157, 0.9);
+}
+
+/* Keyframes for the glowing edge pulse */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(136, 255, 0, 0.9);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(0, 255, 55, 0.5);
+  }
+}
+
+
 /* ============================================
    FOOTER + SOCIAL ICONS
    ============================================ */
