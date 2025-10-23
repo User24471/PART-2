@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Place Your Order | EchoFresh Organics</title>
+  <link rel="stylesheet" href="../CSS/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <img src="../assests/logo.webp" alt="EchoFresh Organics Logo" class="logo">
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="./About.html">About Us</a>
+      <a href="./products.html">Products</a>
+      <a href="./services.html">Services</a>
+      <a href="./contact.html">Contact</a>
+      <a href="./order.html" class="active">Order</a>
+    </nav>
+     <!-- Dark mode toggle button -->
+  <button id="darkModeToggle" class="dark-mode-btn"><i class="fas fa-moon"></i></button>
+  </header>
+
+  <main>
+    <h1>🛒 Place Your Organic Order</h1>
+    <p style="text-align:center; color:#ddd;">
+      Fill in your details, select products, and see your cart below.
+    </p>
+
+    <section class="order-section">
+      <form class="order-form" id="orderForm">
+        <h2>Customer Details</h2>
+        <input type="text" id="name" placeholder="Full Name" required>
+        <input type="email" id="email" placeholder="Email Address" required>
+        <input type="tel" id="phone" placeholder="Phone Number" required>
+        <input type="text" id="address" placeholder="Delivery Address" required>
+
+        <h2>Select Products</h2>
+        <select id="product" required>
+          <option value="">-- Choose a Product --</option>
+          <option value="Organic Apples" data-price="30">Organic Apples - R30/kg</option>
+          <option value="Fresh Spinach" data-price="20">Fresh Spinach - R20/bundle</option>
+          <option value="Brown Rice" data-price="45">Brown Rice - R45/2kg</option>
+          <option value="Whole Wheat Bread" data-price="25">Whole Wheat Bread - R25/loaf</option>
+          <option value="Free-range Eggs" data-price="40">Free-range Eggs - R40/dozen</option>
+        </select>
+
+        <input type="number" id="quantity" placeholder="Quantity" min="1" required>
+
+        <div class="price-display">
+          <p>Price per item: <span id="pricePerItem">R0</span></p>
+          <p>Total for this product: <span id="itemTotal">R0</span></p>
+        </div>
+
+        <button type="button" class="glow-button" id="addToCartBtn">Add to Cart</button>
+
+        <div class="cart-container">
+          <h3>Your Cart</h3>
+          <ul id="cartItems"></ul>
+          <p class="cart-total">Cart Total: <span id="cartTotal">R0</span></p>
+        </div>
+
+        <button type="submit" class="glow-button">Submit Order</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 EchoFresh Organics. All rights reserved.</p>
+    <div class="social-footer">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://wa.me/27663792391" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+  </footer>
+
+  <script src="../js/order.js"></script>
+</body>
+</html>
