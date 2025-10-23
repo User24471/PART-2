@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 /* ============================================
-   Global Typography & General Styling
+   Global Variables & Typography
    ============================================ */
 :root {
   --primary-color: #1abc9c;
@@ -12,41 +12,67 @@
   --font-family: 'Poppins', sans-serif;
 }
 
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ============================================
+   Animated Gradient Background 🌿 (Updated)
+   ============================================ */
 body {
-  background-color: #eafaf1;
   font-family: var(--font-family);
   color: var(--text-color);
   line-height: 1.6;
   margin: 0;
   padding: 0;
+
+  background: linear-gradient(-45deg, #a8e063, #56ab2f, #00c9a7, #92fe9d);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  transition: background 0.5s ease, color 0.5s ease;
 }
 
-/* Headings Hierarchy */
-h1, h2, h3 {
-  font-weight: 700;
-  color: var(--secondary-color);
+/* Smooth gradient animation */
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-p, label {
-  font-size: 1rem;
+/* Dark Mode */
+body.dark-mode {
+  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #000000);
+  background-size: 400% 400%;
+  animation: gradientAnimation 20s ease infinite;
+  color: #f5f5f5;
+}
+
+/* Canvas for Floating Leaves 🌿 */
+#leafCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
 }
 
 /* ============================================
-   HEADER + NAVIGATION LAYOUT
+   HEADER + NAVIGATION
    ============================================ */
 header {
-  background: var(--primary-color);
+  background: rgba(255, 255, 255, 0.7);
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 15px 30px;
+  border-radius: 10px;
+  margin: 10px;
 }
 
 header img.logo {
@@ -55,7 +81,6 @@ header img.logo {
   border-radius: 10px;
 }
 
-/* Navigation Styling */
 nav {
   display: flex;
   flex-wrap: wrap;
@@ -64,7 +89,7 @@ nav {
 }
 
 nav a {
-  color: white;
+  color: var(--secondary-color);
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
@@ -75,7 +100,41 @@ nav a {
 
 nav a:hover {
   background: #16a085;
+  color: #fff;
   transform: scale(1.05);
+}
+
+/* Hamburger menu for mobile 🌿 */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: var(--secondary-color);
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 10px;
+    position: absolute;
+    right: 20px;
+    top: 80px;
+    width: 220px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
 }
 
 /* ============================================
@@ -88,6 +147,7 @@ main {
 
 main h1 {
   font-size: 2.2rem;
+  color: var(--secondary-color);
   margin-bottom: 15px;
 }
 
@@ -98,63 +158,7 @@ main h1 {
   margin: 20px auto;
   display: block;
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-
-/* ============================================
-   RESPONSIVE TABLE (PRODUCTS PAGE)
-   ============================================ */
-.table-container {
-  width: 100%;
-  overflow-x: auto; /* allows horizontal scroll on small screens */
-  margin: 20px 0;
-  -webkit-overflow-scrolling: touch;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 550px; /* prevents table from squashing */
-  background: #fff;
-}
-
-th, td {
-  border: 1px solid #ddd;
-  padding: 12px 15px;
-  text-align: center;
-  font-size: 1rem;
-}
-
-th {
-  background-color: var(--secondary-color);
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-tr:nth-child(even) {
-  background-color: #f3f3f3;
-}
-
-tr:hover {
-  background-color: #e0f2f1;
-  transition: background 0.2s ease;
-}
-
-/* Mobile table fix */
-@media (max-width: 600px) {
-  .table-container {
-    border: 2px solid var(--primary-color);
-    border-radius: 8px;
-  }
-
-  table {
-    font-size: 0.9rem;
-    min-width: 450px;
-  }
-
-  th, td {
-    padding: 10px;
-  }
+  animation: fadeIn 2s ease;
 }
 
 /* ============================================
@@ -215,6 +219,60 @@ tr:hover {
 }
 
 /* ============================================
+   PRODUCT GALLERY
+   ============================================ */
+.product-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.product-gallery div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-gallery div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+}
+
+.product-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.product-gallery h3 {
+  color: #2e7d32;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Responsive: stack vertically on smaller screens */
+@media (max-width: 768px) {
+  .product-gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-gallery div {
+    width: 90%;
+  }
+}
+
+/* ============================================
    CONTACT FORM STYLING
    ============================================ */
 .contact-form {
@@ -244,7 +302,7 @@ tr:hover {
   outline: none;
 }
 
-/* Button */
+/* Button Glow Effect */
 .contact-form button {
   width: 100%;
   background: var(--secondary-color);
@@ -263,41 +321,8 @@ tr:hover {
   transform: translateY(-3px);
 }
 
-.glow-button {
-  background-color: #4ee029;           /* Base red */
-  color: white;
-  border: 2px solid #15ff00;           /* Red edge */
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 15px rgba(0, 255, 64, 0.5);
-  animation: pulseGlow 1.8s infinite ease-in-out;
-}
-
-/* On hover - stronger red */
-.glow-button:hover {
-  background-color: #8aff66;
-  box-shadow: 0 0 25px rgba(0, 255, 157, 0.9);
-}
-
-/* Keyframes for the glowing edge pulse */
-@keyframes pulseGlow {
-  0% {
-    box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
-  }
-  50% {
-    box-shadow: 0 0 25px rgba(136, 255, 0, 0.9);
-  }
-  100% {
-    box-shadow: 0 0 10px rgba(0, 255, 55, 0.5);
-  }
-}
-
-
 /* ============================================
-   FOOTER + SOCIAL ICONS
+   FOOTER
    ============================================ */
 footer {
   background: var(--primary-color);
@@ -324,178 +349,9 @@ footer {
 }
 
 /* ============================================
-   RESPONSIVE DESIGN BREAKPOINTS
+   ANIMATIONS
    ============================================ */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav {
-    margin-top: 10px;
-  }
-
-  main h1 {
-    font-size: 1.8rem;
-  }
-
-  .main-image {
-    width: 95%;
-  }
-}
-
-@media (max-width: 480px) {
-  header img.logo {
-    height: 80px;
-  }
-
-  nav a {
-    font-size: 0.9rem;
-  }
-
-  .service h2 {
-    font-size: 1.3rem;
-  }
-}
-
-/* Fade animation */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-/* Product Gallery Layout */
-.product-gallery {
-  display: flex;
-  flex-wrap: wrap; /* allows wrapping on smaller screens */
-  justify-content: center; /* centers items horizontally */
-  gap: 20px;
-  padding: 20px;
-  text-align: center;
-}
-
-.product-gallery div {
-  display: flex;
-  flex-direction: column; /* stacks the image and title vertically */
-  align-items: center;
-  width: 250px;
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  padding: 15px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.product-gallery div:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 12px rgba(0,0,0,0.15);
-}
-
-.product-gallery img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-top: 10px;
-}
-
-.product-gallery h3 {
-  color: #2e7d32; /* eco green tone */
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-/* Responsive: stack vertically on smaller screens */
-@media (max-width: 768px) {
-  .product-gallery {
-    flex-direction: column; /* stack all items vertically */
-    align-items: center;
-  }
-
-  .product-gallery div {
-    width: 90%; /* full width on mobile */
-  }
-}
-
-/* Default navigation style */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #f0f8f5;
-  padding: 10px 20px;
-}
-
-nav {
-  display: flex;
-  gap: 20px;
-}
-
-nav a {
-  text-decoration: none;
-  color: #2e7d32;
-  font-weight: bold;
-}
-
-.menu-toggle {
-  display: none;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-/* Responsive Navigation */
-@media (max-width: 768px) {
-  nav {
-    display: none; /* hide menu by default on mobile */
-    flex-direction: column;
-    background-color: #f0f8f5;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 200px;
-    text-align: left;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  }
-
-  nav.active {
-    display: flex; /* show menu when toggled */
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  .menu-toggle.open i {
-    content: "\f00d"; /* switch icon to X when open */
-  }
-}
-
-/* === Animated Gradient Background === */
-body {
-  background: linear-gradient(-45deg, #a8e063, #56ab2f, #00c9a7, #92fe9d);
-  background-size: 400% 400%;
-  animation: gradientAnimation 15s ease infinite;
-  transition: background 0.5s ease, color 0.5s ease;
-}
-
-/* Smooth gradient movement */
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-body.dark-mode {
-  background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #000000);
-  background-size: 400% 400%;
-  animation: gradientAnimation 20s ease infinite;
-  color: #f5f5f5;
 }
