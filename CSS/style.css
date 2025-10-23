@@ -595,12 +595,12 @@ nav {
 
 nav a {
   text-decoration: none;
-  color: #2e7d32;
+  color: #000000;
   font-weight: 600;
 }
 
 nav a:hover {
-  color: #1b5e20;
+  color: #000000;
 }
 
 /* Hamburger Icon */
@@ -608,7 +608,7 @@ nav a:hover {
   display: none;
   cursor: pointer;
   font-size: 24px;
-  color: #2e7d32;
+  color: #000000;
 }
 
 /* Mobile View */
