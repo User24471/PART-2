@@ -1,3 +1,34 @@
+// ====HUmburger ====
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.getElementById("menu-toggle");
+  const nav = document.querySelector("nav");
+  const icon = menuToggle.querySelector("i");
+  const navLinks = nav.querySelectorAll("a");
+
+  // Toggle menu open/close
+  menuToggle.addEventListener("click", function () {
+    nav.classList.toggle("active");
+
+    // Toggle between hamburger and X icon
+    if (nav.classList.contains("active")) {
+      icon.classList.remove("fa-bars");
+      icon.classList.add("fa-times");
+    } else {
+      icon.classList.remove("fa-times");
+      icon.classList.add("fa-bars");
+    }
+  });
+
+  // Close menu when a nav link is clicked (for mobile)
+  navLinks.forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("active");
+      icon.classList.remove("fa-times");
+      icon.classList.add("fa-bars");
+    });
+  });
+});
+
 // Wait for the DOM to load
 document.addEventListener("DOMContentLoaded", function() {
   const menuToggle = document.querySelector(".menu-toggle");

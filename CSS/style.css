@@ -585,3 +585,58 @@ body.dark-mode .order-form button[type="submit"] {
   background: linear-gradient(45deg, #2196f3, #1565c0);
   box-shadow: 0 4px 15px rgba(33, 150, 243, 0.5);
 }
+
+/* Basic Navigation Styling */
+nav {
+  display: flex;
+  gap: 20px;
+  transition: all 0.3s ease;
+}
+
+nav a {
+  text-decoration: none;
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: #1b5e20;
+}
+
+/* Hamburger Icon */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #2e7d32;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #e8f5e9;
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    width: 220px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 15px;
+    animation: fadeIn 0.3s ease forwards;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
