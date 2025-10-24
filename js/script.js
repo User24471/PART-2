@@ -119,3 +119,4 @@ darkModeToggle.addEventListener('click', () => {
   const icon = darkModeToggle.querySelector('i');
   icon.classList.toggle('fa-moon');
   icon.classList.toggle('fa-sun');
+});
