@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enquiry - EcoFresh Organics</title>
+  <link rel="stylesheet" href="../CSS/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</head>
+<body>
+ <!-- Animated Background Canvas -->
+  <canvas id="leafCanvas"></canvas>
+  <!-- Header -->
+  <header>
+    <img src="../assests/logo.webp" alt="EcoFresh Organics Logo" class="logo"><br/>
+    <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="./About.html">About Us</a>
+      <a href="./products.html">Products</a>
+      <a href="./services.html">Services</a>
+      <a href="./contact.html">Contact</a>
+      <a href="./enquiry.html">Enquiry</a>
+    </nav>
+  </header>
+
+ <!--Form-->
+  <main>
+  <h1>Enquiry Form</h1>
+  <p>Please fill in the form below, and we'll get back to you promptly.</p>
+
+  <div class="card">
+    <form id="enqForm" novalidate>
+      <label>
+        Full name
+        <input type="text" name="fullname" id="fullname" required minlength="2">
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" id="email" required>
+      </label>
+      <label>
+        Enquiry type
+        <select name="type" id="type" required>
+          <option value="">Select...</option>
+          <option value="service">Service/Product</option>
+          <option value="volunteer">Volunteer</option>
+          <option value="sponsor">Sponsor</option>
+        </select>
+      </label>
+      <label id="productLabel" style="display:none">
+        Select product/service
+        <select id="product">
+          <option value="basic">Basic package - R350</option>
+          <option value="pro">Pro package - R700</option>
+          <option value="deluxe">Deluxe - R1200</option>
+        </select>
+      </label>
+      <label>
+        Quantity (if applicable)
+        <input type="number" id="qty" min="1" value="1">
+      </label>
+      <button type="submit">Get Quote</button>
+    </form>
+
+    <div id="result" aria-live="polite"></div>
+  </div>
+</main>
+
+
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 EcoFresh Organics. All rights reserved.</p>
+    <div class="social-footer">
+      <a href="https://www.facebook.com/LukhwareniThendoTheophilus" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://wa.me/27603320842" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="https://twitter.com/TLukhwaren30826" target="_blank" aria-label="X (Twitter)">
+        <i class="fab fa-x-twitter"></i>
+      </a>
+      <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+        <i class="fab fa-youtube"></i>
+      </a>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="../js/enquiry.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/enquiry.js"></script>
+   <!-- JS -->
+  <script type="text/javascript">
+    // Initialize EmailJS
+    (function(){ emailjs.init("lukhwarenithendo60@gmail.com"); })();
+
+    const form = document.getElementById('enqForm');
+    const type = document.getElementById('type');
+    const productLabel = document.getElementById('productLabel');
+
+    // Show/hide product selection
+    type.addEventListener('change', () => {
+      productLabel.style.display = type.value === 'service' ? 'block' : 'none';
+    });
+
+    // Product pricing
+    function priceFor(product) {
+      return product === 'basic' ? 350 : product === 'pro' ? 700 : 1200;
+    }
+
+    // Submit form
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+
+      const fullname = document.getElementById('fullname').value.trim();
+      const email = document.getElementById('email').value.trim();
+      if(fullname.length < 2){ return alert('Please enter your name'); }
+      if(!/^\S+@\S+\.\S+$/.test(email)){ return alert('Please enter a valid email'); }
+
+      const enqType = type.value;
+      const qty = Number(document.getElementById('qty').value) || 1;
+      let product = '';
+      let total = 0;
+
+      if(enqType === 'service'){
+        product = document.getElementById('product').value;
+        total = priceFor(product) * qty;
+      }
+
+      const templateParams = {
+        fullname: fullname,
+        email: email,
+        enquiryType: enqType,
+        product: product,
+        quantity: qty,
+        total: total
+      };
+
+      emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+        .then(function(response) {
+          document.getElementById('result').innerHTML = `<p>Thank you ${fullname}, your enquiry has been sent. We'll email you at ${email} soon!</p>`;
+          form.reset();
+          productLabel.style.display = 'none';
+        }, function(error) {
+          document.getElementById('result').innerHTML = `<p>Oops! Something went wrong. Please try again.</p>`;
+          console.error('EmailJS Error:', error);
+        });
+    });
+  </script>
+
+  <!-- Card Styles -->
+  <style>
+    body {
+      background: linear-gradient(135deg, #f0f8ff, #e0ffe0);
+      font-family: "Poppins", sans-serif;
+      color: #333;
+    }
+    h1 { text-align: center; margin-top: 2rem; font-size: 2rem; }
+    p { text-align: center; margin-bottom: 2rem; font-size: 1.1rem; }
+    .card {
+      background: linear-gradient(145deg, #ffffff, #f0fff0);
+      padding: 2rem;
+      margin: 2rem auto;
+      max-width: 500px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0,0,0,0.2); }
+    .card form label { display: block; margin-bottom: 1.2rem; font-weight: 500; }
+    .card form input,
+    .card form select {
+      width: 100%; padding: 0.6rem 0.8rem; margin-top: 0.3rem;
+      border: 1px solid #ccc; border-radius: 12px; outline: none; transition: all 0.3s ease;
+    }
+    .card form input:focus,
+    .card form select:focus { border-color: #28a745; box-shadow: 0 0 8px rgba(40, 167, 69, 0.3); }
+    .card button {
+      display: block; width: 100%; padding: 0.75rem; border: none;
+      border-radius: 15px; font-size: 1.1rem; font-weight: 600;
+      color: #fff; cursor: pointer; background: linear-gradient(90deg, #28a745, #20c997);
+      transition: background 0.5s ease, transform 0.3s ease;
+    }
+    .card button:hover { background: linear-gradient(90deg, #20c997, #28a745); transform: scale(1.05); }
+    #result {
+      margin-top: 1.5rem; padding: 1rem; border-radius: 12px;
+      background-color: rgba(240, 255, 240, 0.8);
+      box-shadow: inset 0 0 8px rgba(0,0,0,0.05); transition: all 0.3s ease;
+    }
+  </style>
+</body>
+</html>
