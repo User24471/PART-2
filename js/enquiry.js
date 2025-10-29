@@ -36,4 +36,12 @@ form.addEventListener('submit', (e) => {
     document.getElementById('result').innerHTML = `<p>Please select an enquiry type.</p>`;
   }
 });
-
+// Show/hide product selection based on enquiry type
+document.getElementById("type").addEventListener("change", function() {
+  const productLabel = document.getElementById("productLabel");
+  if (this.value === "service") {
+    productLabel.style.display = "block";
+  } else {
+    productLabel.style.display = "none";
+  }
+});
