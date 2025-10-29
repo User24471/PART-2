@@ -771,3 +771,4 @@ nav a:hover {
 .accordion-header.active::after {
   transform: rotate(180deg);
 }
+
