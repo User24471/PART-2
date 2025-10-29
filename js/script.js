@@ -122,6 +122,34 @@ darkModeToggle.addEventListener('click', () => {
 });
 
 
+function updateGreeting() {
+  const now = new Date();
+  const hour = now.getHours();
+  let greeting;
+
+  // Determine greeting based on time
+  if (hour < 12) {
+    greeting = "Good Morning, Customer!";
+  } else if (hour < 18) {
+    greeting = "Good Afternoon, Customer!";
+  } else {
+    greeting = "Good Evening, Customer!";
+  }
+
+  // Format date and time
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+  const dateTime = now.toLocaleString('en-ZA', options);
+
+  // Display greeting + date/time
+  document.getElementById("greetingMessage").textContent = `${greeting} Today is ${dateTime}`;
+}
+
+// Update every second
+setInterval(updateGreeting, 1000);
+
+// Run immediately
+updateGreeting();
+
 
 
 

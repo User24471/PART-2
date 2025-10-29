@@ -772,3 +772,13 @@ nav a:hover {
   transform: rotate(180deg);
 }
 
+.greeting-date-time {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #fff6f6;
+  background-color: #2e8b57; /* organic green */
+  padding: 15px 0;
+  margin-top: 20px;
+  font-weight: 600;
+  border-radius: 5px;
+}
