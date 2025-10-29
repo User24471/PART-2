@@ -36,3 +36,4 @@ form.addEventListener('submit', (e) => {
     document.getElementById('result').innerHTML = `<p>Please select an enquiry type.</p>`;
   }
 });
+
