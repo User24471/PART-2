@@ -182,6 +182,30 @@ Built using **HTML**, **CSS**, and **JavaScript**, this project demonstrates int
    ```bash
    git clone https://github.com/<your->/EcoFresh-Organics.git
 
+EcoFresh-Organics/
+│
+├── index.html
+├── /pages
+│   ├── about.html
+│   ├── products.html
+│   ├── services.html
+│   ├── contact.html
+│   ├── enquiry.html
+│   ├── order.html
+│
+├── /css
+│   └── style.css
+│
+├── /js
+│   └── script.js
+│
+└── /assets
+    ├── logo.webp
+    ├── image.png
+    ├── map.png
+    ├── tablet.png
+    └── product.png
+
 ---
 
 ## 📚 Reference List
