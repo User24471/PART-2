@@ -150,6 +150,22 @@ setInterval(updateGreeting, 1000);
 // Run immediately
 updateGreeting();
 
+// Filter products based on search input
+function filterProducts() {
+  const input = document.getElementById("searchInput").value.toLowerCase();
+  const products = document.getElementsByClassName("product-item");
+
+  for (let i = 0; i < products.length; i++) {
+    const item = products[i];
+    const text = item.textContent.toLowerCase();
+
+    if (text.includes(input)) {
+      item.style.display = "block";
+    } else {
+      item.style.display = "none";
+    }
+  }
+}
 
 
 
