@@ -123,6 +123,65 @@ This is **Part 2** of the EcoFresh Organics website project. In this update, I a
 
 Got it 👍 Since you used **W3Schools** for coding references and **ChatGPT** for guidance, here’s how your **reference list** would look in **APA 7th edition style**:
 
+
+# 🌿 EcoFresh Organics Website – Final Project (Part 3)
+
+**Author:** *Lukhwareni Thendo Theophilus*  
+**Year:** 2025  
+**Project:** Web Development Practical Assessment  
+
+---
+
+## 🚀 Overview
+
+The **EcoFresh Organics Website** is a modern, multi-page, and fully responsive website that promotes organic products and sustainable living.  
+Built using **HTML**, **CSS**, and **JavaScript**, this project demonstrates interactivity, responsiveness, and SEO-friendly web design.
+
+---
+
+## 📄 Pages Included
+
+| Page | Description |
+|------|--------------|
+| **Home (`index.html`)** | Introduction to EcoFresh Organics and navigation to all sections. |
+| **About Us (`about.html`)** | Details about the company’s story, mission, values, and team, with JS accordions. |
+| **Products (`products.html`)** | Displays organic product categories in a vertical layout with a responsive table inside a styled card. |
+| **Services (`services.html`)** | Outlines eco-friendly services like delivery, workshops, and packaging. |
+| **Order (`order.html`)** | Allows customers to place online orders with JavaScript form validation. |
+| **Enquiry (`enquiry.html`)** | Includes a functional enquiry form with validation and a thank-you message. |
+| **Contact (`contact.html`)** | Provides contact information, social media links, and a responsive Google Map. |
+
+---
+
+## ✨ Features and Functionality
+
+### 🌱 JavaScript Enhancements
+
+- **Accordions** on the *About Us* page for “Our Story,” “Mission,” “Values,” and “Team.”  
+- **Dark Mode Toggle** – Allows users to switch between light and dark themes dynamically.  
+- **Order Form Validation** – Ensures all inputs (name, product, quantity, contact) are filled correctly.  
+- **Enquiry Form Validation** – Checks required fields and displays confirmation messages.  
+- **Auto Date/Time Greeting** – Displays dynamic greetings such as “Good morning, customer!”  
+- **Navigation Interactivity** – Smooth scroll and menu highlighting for active pages.  
+
+---
+
+## 🎨 Styling and Responsiveness
+
+- Unified **dark-black theme** for better contrast and accessibility.  
+- Clean and readable **Google Fonts** typography.  
+- Tables wrapped inside **card-like containers** with hover effects and shadows.  
+- Responsive design using **flexbox** and **media queries** for mobile, tablet, and desktop devices.  
+- Animated **background effects** to give the site a lively and modern appearance.  
+
+---
+
+## ⚙️ How to Run
+
+1. **Download or Clone** this repository:  
+   ```bash
+   git clone https://github.com/<your->/EcoFresh-Organics.git
+
 ---
 
 ## 📚 Reference List
