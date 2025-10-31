@@ -222,8 +222,13 @@ EcoFresh-Organics/
 * W3Schools. (n.d.). *CSS Flexbox*. W3Schools. Retrieved September 16, 2025, from [https://www.w3schools.com/css/css3\_flexbox.asp](https://www.w3schools.com/css/css3_flexbox.asp)
 
 * OpenAI. (2025). *ChatGPT (Version GPT-5) \[Large language model]*. OpenAI. Retrieved September 16, 2025, from [https://chat.openai.com/](https://chat.openai.com/)
+* Mozilla Developer Network (MDN). (n.d.). JavaScript Reference. Retrieved October 13, 2025, from[https://developer.mozilla.org/en-US/docs/Web/JavaScript]
 
+* Traversy Media. (2024). Responsive Web Design Tutorial (HTML, CSS, JS) [YouTube video]. YouTube. [https://www.youtube.com/c/TraversyMedia]
 
+* Web Dev Simplified. (2024). Learn JavaScript DOM Manipulation [YouTube video]. YouTube. [https://www.youtube.com/c/WebDevSimplified]
+* OpenAI. (2025). ChatGPT (Version GPT-5) 𝐿𝑎𝑟𝑔𝑒𝑙𝑎𝑛𝑔𝑢𝑎𝑔𝑒𝑚𝑜𝑑𝑒𝑙Largelanguagemodel. OpenAI. Retrieved October 13, 2025, from [https://chat.openai.com/]
+* Font Awesome. (n.d.). Icons and UI Elements. Retrieved from [https://fontawesome.com/]
 ![alt Home pageext](../assests/image.png)
 ![alt Map](../assests/map.png)
 ![alt text](../assests/tablet.png)
