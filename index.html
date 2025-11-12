@@ -84,11 +84,11 @@ function updateGreeting() {
   let greeting;
 
   // Determine greeting based on time
-  if (hour < 12) {
+  if (hour < 1) {
     greeting = "Good Morning, Customer!";
-  } else if (hour < 18) {
+  } else if (hour < 12) {
     greeting = "Good Afternoon, Customer!";
-  } else {
+  } else if (hour < 17){ 
     greeting = "Good Evening, Customer!";
   }
 
