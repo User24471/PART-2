@@ -16,14 +16,16 @@
   <header>
     <img src="../assests/logo.webp" alt="EcoFresh Organics Logo" class="logo"><br/>
     <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
-    <nav>
-      <a href="../index.html">Home</a>
-      <a href="./About.html">About Us</a>
-      <a href="./products.html">Products</a>
-      <a href="./services.html">Services</a>
-      <a href="./contact.html">Contact</a>
-      <a href="./enquiry.html">Enquiry</a>
-    </nav>
+<nav class="nav-buttons">
+  <button onclick="location.href='../index.html'">Home</button>
+  <button onclick="location.href='./About.html'">About Us</button>
+  <button onclick="location.href='./products.html'">Products</button>
+  <button onclick="location.href='./services.html'">Services</button>
+  <button onclick="location.href='./contact.html'">Contact</button>
+  <button onclick="location.href='./orders.html'">Orders</button>
+  <button onclick="location.href='./enquiry.html'">Enquiry</button>
+</nav>
+
   </header>
 
 <!-- Main Content -->
@@ -99,6 +101,7 @@
   <!-- JavaScript -->
   <script src="../js/enquiry.js"></script>
   <script src="../js/script.js"></script>
+    <script src="../js/nav.js"></script>
      <script>
 function updateGreeting() {
   const now = new Date();

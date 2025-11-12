@@ -18,15 +18,16 @@
   <div class="menu-toggle" id="menu-toggle">
     <i class="fas fa-bars"></i>
   </div>
-  <nav>
-    <a href="../index.html">Home</a>
-    <a href="./About.html">About Us</a>
-    <a href="./products.html">Products</a>
-    <a href="./services.html">Services</a>
-    <a href="./contact.html">Contact</a>
-    <a href="./orders.html">Orders</a>
-    <a href="./enquiry.html">Enquiry</a>
-  </nav>
+<nav class="nav-buttons">
+  <button onclick="location.href='../index.html'">Home</button>
+  <button onclick="location.href='./About.html'">About Us</button>
+  <button onclick="location.href='./products.html'">Products</button>
+  <button onclick="location.href='./services.html'">Services</button>
+  <button onclick="location.href='./contact.html'">Contact</button>
+  <button onclick="location.href='./orders.html'">Orders</button>
+  <button onclick="location.href='./enquiry.html'">Enquiry</button>
+</nav>
+
     </header><br/>
 <!--about us-->
     <main>
@@ -112,6 +113,7 @@
         <!-- Link your JavaScript at the bottom of body -->
 <script src="../js/script.js"></script>
 <script src="../js/accordions.js"></script>
+  <script src="../js/nav.js"></script>
    <script>
 function updateGreeting() {
   const now = new Date();
@@ -119,11 +121,11 @@ function updateGreeting() {
   let greeting;
 
   // Determine greeting based on time
-  if (hour < 12) {
+  if (hour < 1) {
     greeting = "Good Morning, Customer!";
-  } else if (hour < 18) {
+  } else if (hour < 12) {
     greeting = "Good Afternoon, Customer!";
-  } else {
+  } else if (hour < 17){ 
     greeting = "Good Evening, Customer!";
   }
 

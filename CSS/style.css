@@ -977,3 +977,40 @@ p {
 .product-item {
   transition: all 0.3s ease;
 }
+
+
+
+/* Navigation bar container */
+.nav-buttons {
+  text-align: center;
+  background-color: #f8f8f8;
+  padding: 15px;
+}
+
+/* Base button style */
+.nav-buttons button {
+  margin: 5px;
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Green base */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.4);
+}
+
+/* Hover effect */
+.nav-buttons button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(72, 239, 128, 0.8);
+}
+
+/* Active/current page button */
+.nav-buttons button.active {
+  background-color: #2e7d32; /* darker green */
+  box-shadow: 0 0 20px rgba(72, 239, 128, 1);
+  transform: scale(1.08);
+}
