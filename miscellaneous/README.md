@@ -197,6 +197,9 @@ EcoFresh-Organics/
 │   └── style.css
 │
 ├── /js
+|
+|
+|
 │   └── script.js
 │
 └── /assets
