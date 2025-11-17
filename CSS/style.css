@@ -1014,3 +1014,16 @@ p {
   box-shadow: 0 0 20px rgba(72, 239, 128, 1);
   transform: scale(1.08);
 }
+
+.search-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+#productSearch {
+  width: 70%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+}

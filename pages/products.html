@@ -4,122 +4,135 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products - EcoFresh Organics</title>
-      <link rel="stylesheet" href="../CSS/style.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-   <!-- Animated Background Canvas -->
   <canvas id="leafCanvas"></canvas>
-   <!--Header with navigation-->
-    <header>
-        <img src="../assests/logo.webp" alt="EchoFresh Organics Logo" class="logo"><br/>
-        <!-- Hamburger icon for mobile -->
-  <div class="menu-toggle" id="menu-toggle">
-    <i class="fas fa-bars"></i>
-  </div>
- <nav class="nav-buttons">
-  <button onclick="location.href='../index.html'">Home</button>
-  <button onclick="location.href='./About.html'">About Us</button>
-  <button onclick="location.href='./products.html'">Products</button>
-  <button onclick="location.href='./services.html'">Services</button>
-  <button onclick="location.href='./contact.html'">Contact</button>
-  <button onclick="location.href='./orders.html'">Orders</button>
-  <button onclick="location.href='./enquiry.html'">Enquiry</button>
-</nav>
 
+  <header>
+        <img src="../assests/logo.webp" alt="EchoFresh Organics Logo" class="logo"><br>
+
+        <div class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <nav class="nav-buttons">
+            <button onclick="location.href='../index.html'">Home</button>
+            <button onclick="location.href='./About.html'">About Us</button>
+            <button onclick="location.href='./products.html'">Products</button>
+            <button onclick="location.href='./services.html'">Services</button>
+            <button onclick="location.href='./contact.html'">Contact</button>
+            <button onclick="location.href='./orders.html'">Orders</button>
+            <button onclick="location.href='./enquiry.html'">Enquiry</button>
         </nav>
-    </header>
-    <!--Creating a table-->
-   <h2>My Organic Products</h2>
-<div class="table-container">
-  <table>
-    <thead>
-      <tr>
-        <th>Fresh Fruits</th>
-        <th>Vegetables</th>
-        <th>Grains & Legumes</th>
-        <th>Dairy Alternatives</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Seasonal organic apples</td>
-        <td>Locally grown spinach</td>
-        <td>Brown rice</td>
-        <td>Organic almond milk</td>
-      </tr>
-      <tr>
-        <td>Bananas</td>
-        <td>Carrots</td>
-        <td>Quinoa</td>
-        <td>Oat milk</td>
-      </tr>
-      <tr>
-        <td>Mangoes</td>
-        <td>Broccoli</td>
-        <td>Lentils</td>
-        <td>Soy-based products</td>
-      </tr>
-      <tr>
-        <td>Seasonal organic oranges</td>
-        <td>Green beans</td>
-        <td>Beans for healthy meals</td>
-        <td>Flavour yoghurt</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+  </header>
 
+  <h2>My Organic Products</h2>
 
-<br/>
-<!--Products Picture-->
-<main>
-  <h1>Our Organic Products</h1>
-  <p>Discover our range of fresh and sustainable organic products.</p>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Fresh Fruits</th>
+          <th>Vegetables</th>
+          <th>Grains & Legumes</th>
+          <th>Dairy Alternatives</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Seasonal organic apples</td>
+          <td>Locally grown spinach</td>
+          <td>Brown rice</td>
+          <td>Organic almond milk</td>
+        </tr>
+        <tr>
+          <td>Bananas</td>
+          <td>Carrots</td>
+          <td>Quinoa</td>
+          <td>Oat milk</td>
+        </tr>
+        <tr>
+          <td>Mangoes</td>
+          <td>Broccoli</td>
+          <td>Lentils</td>
+          <td>Soy-based products</td>
+        </tr>
+        <tr>
+          <td>Seasonal organic oranges</td>
+          <td>Green beans</td>
+          <td>Beans for healthy meals</td>
+          <td>Flavour yoghurt</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-  <section class="product-gallery">
-    <div>
-      <h3>Fruits Basket</h3>
-      <img src="../assests/my l.webp" alt="Fruits basket">
-    </div>
-    <div>
-      <h3>Vegetables Basket</h3>
-      <img src="../assests/v.webp" alt="Vegetables basket">
-    </div>
-    <div>
-      <h3>Grains & Legumes</h3>
-      <img src="../assests/r.webp" alt="Grains and legumes">
-    </div>
-    <div>
-      <h3>Dairy Alternatives</h3>
-      <img src="../assests/d.webp" alt="Dairy alternatives">
-    </div>
-  </section>
-</main>
+  <br>
 
-  
-<!--Footer-->
-<footer>
+  <main>
+    <h1>Our Organic Products</h1>
+    <p>Discover our range of fresh and sustainable organic products.</p>
+
+    <div class="search-container">
+      <input type="text" id="productSearch" placeholder="Search for a product...">
+    </div>
+
+    <section class="product-gallery">
+        <div class="product-item" data-name="fruits basket apples bananas mangoes oranges">
+          <h3>Fruits Basket</h3>
+          <img src="../assests/my l.webp" alt="Fruits basket">
+        </div>
+
+        <div class="product-item" data-name="vegetables basket spinach carrots broccoli beans">
+          <h3>Vegetables Basket</h3>
+          <img src="../assests/v.webp" alt="Vegetables basket">
+        </div>
+
+        <div class="product-item" data-name="grains legumes rice quinoa lentils beans">
+          <h3>Grains & Legumes</h3>
+          <img src="../assests/r.webp" alt="Grains and legumes">
+        </div>
+
+        <div class="product-item" data-name="dairy alternatives almond milk oat milk soy yoghurt">
+          <h3>Dairy Alternatives</h3>
+          <img src="../assests/d.webp" alt="Dairy alternatives">
+        </div>
+    </section>
+  </main>
+
+  <footer>
         <p>&copy; 2025 EcoFresh Organics. All rights reserved.</p>
-        <!-- Social Media Footer -->
-<div class="social-footer">
-  <a href="https://www.facebook.com/LukhwareniThendoTheophilus" target="_blank" aria-label="Facebook">
-    <i class="fab fa-facebook-f"></i>
-  </a>
-  <a href="https://wa.me/27603320842" target="_blank" aria-label="WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-  <a href="https://twitter.com/TLukhwaren30826" target="_blank" aria-label="X (Twitter)">
-    <i class="fab fa-x-twitter"></i>
-  </a>
-  <a href="https://youtube.com" target="_blank" aria-label="YouTube">
-    <i class="fab fa-youtube"></i>
-  </a>
-</div>
 
-      </footer>
-        <!-- Link your JavaScript  -->
-<script src="../js/script.js"></script>
+        <div class="social-footer">
+          <a href="https://www.facebook.com/LukhwareniThendoTheophilus" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/27603320842" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://twitter.com/TLukhwaren30826" target="_blank"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+        </div>
+  </footer>
+
+  <script>
+    const searchInput = document.getElementById("productSearch");
+    const productItems = document.querySelectorAll(".product-item");
+
+    searchInput.addEventListener("keyup", function () {
+      let searchValue = this.value.toLowerCase();
+
+      productItems.forEach(item => {
+        let itemName = item.getAttribute("data-name").toLowerCase();
+
+        if (itemName.includes(searchValue)) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    });
+  </script>
+
+  <script src="../js/script.js"></script>
   <script src="../js/nav.js"></script>
 </body>
 </html>
