@@ -70,3 +70,56 @@ Improved JavaScript to ensure:
 No jitter during transition.
 Smooth toggle without layout shifts.
 Cleaned unused CSS classes.
+
+v1.0.0 — Initial Navigation Bar
+Added top navigation bar using <nav> with:
+Logo section
+Horizontal menu links (Home, Products, About, Contact,services,order,enquiry)
+Basic styling using CSS:
+Flexbox alignment
+Background color matching brand palette
+Padding and spacing for layout structure
+
+v1.1.0 — Hover Styling Upgrade
+Added hover effects to menu items:
+Color change on hover
+Underline or border effect
+Improved text spacing for better readability.
+
+v1.2.0 — Mobile Responsive Navigation
+Added hamburger menu for small screens.
+Implemented toggle script to open/close mobile menu.
+Added responsive breakpoints (@media queries):
+Hides desktop menu on mobile
+Shows slide-down menu for mobile users
+
+v1.3.0 — Smooth Animation Enhancements
+Added slide animation for mobile menu opening.
+Improved transitions using:
+transform
+opacity
+max-height
+Increased animation smoothness and responsiveness.
+
+v1.4.0 — Icon Integration
+Added FontAwesome icons:
+Hamburger (fa-bars)
+Close (fa-times)
+Adjusted icon sizes for visual balance.
+Improved positioning of icons in mobile view.
+
+v1.5.0 — Sticky Navigation Feature
+Added sticky/fixed top functionality:
+Navbar remains visible during scrolling.
+Added drop shadow for better separation from content while scrolling.
+
+v1.6.0 — Color & Branding Improvements
+Updated color palette to match EcoFresh Organics green theme.
+Added subtle gradients and shadow effects.
+Improved focus state for accessibility (keyboard users).
+
+v1.7.0 — Code Cleanup & Optimization
+Removed unused CSS rules.
+Minimized JavaScript for better performance.
+Improved HTML structure for clarity and maintainability.
+Fixed inconsistent spacing and alignment issues.
