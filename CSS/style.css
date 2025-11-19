@@ -1027,3 +1027,16 @@ p {
   border-radius: 8px;
   border: 1px solid #aaa;
 }
+
+.greeting-date-time {
+    text-align: center;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 1.2rem;
+    animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+    0% { text-shadow: 0 0 5px #4aff4a; }
+    100% { text-shadow: 0 0 15px #4aff4a; }
+}

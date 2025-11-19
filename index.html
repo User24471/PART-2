@@ -73,32 +73,44 @@
    <script src="./js/nav.js"></script>
    <script>
 function updateGreeting() {
-  const now = new Date();
-  const hour = now.getHours();
-  let greeting;
+    const now = new Date();
+    const hour = now.getHours();
+    let greeting = "";
 
-  // Determine greeting based on time
-  if (hour < 1) {
-    greeting = "Good Morning, Customer!";
-  } else if (hour < 12) {
-    greeting = "Good Afternoon, Customer!";
-  } else if (hour < 17){ 
-    greeting = "Good Evening, Customer!";
-  }
+    // Correct greeting logic
+    if (hour >= 0 && hour < 12) {
+        greeting = "Good Morning, Customer!";
+    } else if (hour >= 12 && hour < 17) {
+        greeting = "Good Afternoon, Customer!";
+    } else {
+        greeting = "Good Evening, Customer!";
+    }
 
-  // Format date and time
-  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-  const dateTime = now.toLocaleString('en-ZA', options);
+    // Format date & time
+    const options = {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
+    };
 
-  // Display greeting + date/time
-  document.getElementById("greetingMessage").textContent = `${greeting} Today is ${dateTime}`;
+    const dateTime = now.toLocaleString("en-ZA", options);
+
+    document.getElementById("greetingMessage").innerHTML = `
+        <span class="neon-text">${greeting}</span> <br>
+        <span class="neon-time">Today is ${dateTime}</span>
+    `;
 }
 
 // Update every second
 setInterval(updateGreeting, 1000);
 
-// Run immediately
+// Run once on load
 updateGreeting();
+
 </script>
 
 </body>
